@@ -21,9 +21,9 @@ class Stack:
     elif removed == self.max:
       self.max = self.stack[0]
       # *** this solution is not constant time!
-      for item in self.stack:
-        if item > self.max:
-          self.max = item
+      for value in self.stack:
+        if value > self.max:
+          self.max = value
     return removed
 
   def push(self, item):
@@ -31,7 +31,7 @@ class Stack:
     if len(self.stack) == 1 or item > self.max:
       self.max = item
 
-  def print_max(self):
+  def get_max(self):
     # I changed the name to print_max so Pyflakes wouldn't get angry about renaming things
     return self.max
 
