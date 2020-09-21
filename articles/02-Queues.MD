@@ -1,6 +1,10 @@
 # How to Implement Stacks and Queues in Python - Part Two: Queues
 
+[Published September 21, 2020](https://dev.to/erikhei/how-to-implement-stacks-and-queues-in-python-part-two-queues-4kme)
+
 [<< Week 1: Stacks](https://dev.to/erikhei/how-to-implement-stacks-and-queues-in-python-part-one-stacks-32f8)
+
+[View Solution on GitHub](https://github.com/erik-hei/whiteboarding-with-erik/blob/master/stacks-and-queues/animal_shelter.py)
 
 ![](https://live.staticflickr.com/6032/6356491405_a06f47e327_4k.jpg)
 Queue, *Aleksey Sundukov, 1986*

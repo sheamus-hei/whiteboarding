@@ -2,7 +2,7 @@
 
 Published September 14, 2020 
 
-[<< Week 0: Introduction](https://dev.to/erikhei/how-to-learn-data-structures-and-algorithms-when-you-re-fresh-out-of-your-bootcamp-2bob)
+[<< Week 0: Introduction](https://dev.to/erikhei/how-to-learn-data-structures-and-algorithms-when-you-re-fresh-out-of-your-bootcamp-2bob) | [Week 2: Queues >>](https://dev.to/erikhei/how-to-implement-stacks-and-queues-in-python-part-two-queues-4kme)
 
 [View Solution on GitHub](https://github.com/erik-hei/whiteboarding-with-erik/blob/master/stacks-and-queues/simple_stack.py)
 
@@ -230,6 +230,6 @@ And there you have it! You can test out adding and removing elements to check th
 	
 Well, folks, that's it for this week. I hope this gave you some insight into how defining classes works in Python, as well as understanding a few data structures. We'll return next week to implement queues. Thanks for reading, and see you then!
 
-[<< Week 0: Introduction](https://dev.to/erikhei/how-to-learn-data-structures-and-algorithms-when-you-re-fresh-out-of-your-bootcamp-2bob)
+[<< Week 0: Introduction](https://dev.to/erikhei/how-to-learn-data-structures-and-algorithms-when-you-re-fresh-out-of-your-bootcamp-2bob) | [Week 2: Queues >>](https://dev.to/erikhei/how-to-implement-stacks-and-queues-in-python-part-two-queues-4kme)
 
 *Erik Heikkila is a Teaching Assistant at General Assembly Seattle. This blog is not associated with GA.*
