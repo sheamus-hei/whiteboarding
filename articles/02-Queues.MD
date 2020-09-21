@@ -27,7 +27,7 @@ We'll start by looking at the stack we came up with last time.
 	        return removed
 
 
-First, let me make note of one thing. In *Cracking the Coding Interview*, Stacks are implemented as a Node List, not as an Array in Java. There are a few reasons for this, but since we haven't learned Linked Lists yet, I decided to keep it simple by using a list in Python.
+First, let me make note of one thing. In *Cracking the Coding Interview*, stacks are implemented as a Node List, not as an Array in Java. There are a few reasons for this, but since we haven't learned Linked Lists yet, I decided to keep it simple by using a list in Python.
 
 To make a queue, we'll modify our Stack class from last week. Queues are very similar to stacks, but where stacks are LIFO–Last In First Out–queues are just the opposite, First In First Out, or FIFO. In our Stack class, we always appended new elements to the end. Then, to `pop` an element off the stack, we removed it from the end. Imagining that the start of the list is the front of the queue, we'll keep adding elements to the end, but remove them from the front instead. The `pop` method for lists in Python can take in one argument, specifying the index at which to remove an element. So, we'll simply pass in 0 as the index we want to remove. 
 
@@ -56,7 +56,7 @@ Okay, maybe we can try something a little more challenging.
 
 ### Queue Problem: Animal Shelter
 
-<img src="http://www.placekitten.com/600/200" alt="place kitten">
+<img src="http://www.placekitten.com/600/300" alt="place kitten">
 *Finally, an excuse for me to use PlaceKitten. Maybe we can place him in a good home?*
 
 Let's look at an example of a queue problem with more constraints.
@@ -90,7 +90,7 @@ As always, we'll start with the `__init__()` method. Now think, how do we want t
 As for the animals, we could make an Animal class that stores information about that animal, and then create separate Dog and Cat classes which inherit those properties. However, I know object oriented programming is new to some of you, so we'll keep it simple by representing each animal with a Python dictionary, for example:
 
 	{
-		"name": "Lucy",
+		"name": "Emmy",
 		"type": "dog"
 	}
 	
@@ -99,7 +99,7 @@ Let's think about how we want to represent the animal shelter's queue. We could 
 Instead, we can represent split dogs and cats into two queues. Then, to adopt adopt a dog, we just have to `pop()` from the `dogs` queue, and vice versa for cats. But if we want to call `adopt_any()`, we need to pick the "oldest" animal out of either list. We can do this by keeping track of the order in which all animals were added, and add a field in each animal's dictionary to tell its order. It will look like this:
 
 	{
-		"name": "Lucy",
+		"name": "Emmy",
 		"type": "dog",
 		"order": 1
 	}
@@ -152,7 +152,7 @@ Okay, now let's adopt a dog. The `adopt_dog()` method simply returns the first d
 	    else:
 	      return self.dogs.pop(0)
 
-Cool. Now let's try the same to adopt a cat. It looks about the same, but we're manipulating the `cats` queue instead. Now, I know your finger is hovering over the copy-paste button, but let's think for a moment. Every time you want to copy-paste something, there's a chance that you could write more elegant code by creating a more general method. And that's what we'll do, we'll adapt the method we just wrote to work for both `adopt_cat` and `adopt_dog`.
+Cool. Now let's try the same to adopt a cat. It looks about the same, but we're manipulating the `cats` queue instead. Now, I know your finger is hovering over the copy-paste button, but let's think for a moment. Every time you want to copy-paste something, there's a good chance that you could write more elegant code by creating a more general method. And that's what we'll do, we'll adapt the method we just wrote to work for both `adopt_cat` and `adopt_dog`.
 
 We'll start by renaming the method `__adopt_animal()`. Remember last week, when I mentioned something about adding a double underscore to a variable to make it private? This concept is called "encapsulation", as one of you pointed out. Similarly, you can do the same with methods in Python to hide methods you only want to be used internally. 
 
@@ -243,10 +243,10 @@ Let's test out the class we wrote. Start by making an AnimalShelter object, eith
 	
 Next, add some animals. Remember our method takes in two arguments, the name and type. 
 
-	a.add_animal("Kai", "cat")
-	a.add_animal("JJ", "Dog")
+	a.add_animal("Pizzapie", "cat")
+	a.add_animal("Emmy", "Dog")
 	a.add_animal("Sushi", "Cat")
-	a.add_animal("Pickles", "Dog")
+	a.add_animal("Charmander", "Dog")
 	print(a.cats, a.dogs)
 	
 This should give us two lists, separated by cats and dogs. Notice that the `order` of each animal is auto-incrementing so that each animal has a unique order index.
@@ -258,7 +258,7 @@ Now let's adopt some of these animals.
 	a.adopt_any()
 	print(a.cats, a.dogs)
 	
-The first animal to be adopted will be the cat, Kai. Next, JJ the dog, and when we run `adopt_any()`, it will choose between Sushi and Pickles. Since Sushi was added first, she gets adopted, making Pickles the only animal left in the shelter. I hope she finds a home soon!
+The first animal to be adopted will be the cat, Pizzapie (shout-out to my students for giving me their pets' names). Next, Emmy the dog, and when we run `adopt_any()`, it will choose between Sushi and Charmander. Since Sushi was added first, she gets adopted, making Charmander the only animal left in the shelter. I hope he finds a home soon.
 
 And that's all for this problem. If you have any questions or feedback, feel free to leave a comment. Next week, we'll take a break from classes and try a more general whiteboarding problem. If there's a particular problem you're scratching your head at, leave it in the comments, and we might just cover it sometime!
 

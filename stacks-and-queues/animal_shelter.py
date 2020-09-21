@@ -40,10 +40,10 @@ class AnimalShelter:
       return self.adopt_cat()
   
 a = AnimalShelter()
-a.add_animal("Kai", "cat")
-a.add_animal("JJ", "Dog")
+a.add_animal("Pizzapie", "cat")
+a.add_animal("Emmy", "Dog")
 a.add_animal("Sushi", "Cat")
-a.add_animal("Pickles", "Dog")
+a.add_animal("Charmander", "Dog")
 print(a.cats, a.dogs)
 a.adopt_cat()
 a.adopt_dog()
