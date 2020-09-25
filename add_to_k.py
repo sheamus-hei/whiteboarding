@@ -7,7 +7,7 @@ def add_to_k(numbers, k):
   for i in range(len(numbers) - 1):
     current = numbers[i]
     for j in range(i + 1, len(numbers)):
-      print("checking", current, "+", numbers[j])
+      # print("checking", current, "+", numbers[j])
       if current + numbers[j] == k:
         return True
   return False    
@@ -20,8 +20,8 @@ def add_to_k_recursive(numbers, num):
   else:
     return add_to_k_recursive(numbers[:-1], num) or add_to_k_recursive(numbers[1:], num)
 
-numList = [10, 15, 3, 7]
+num_list = [10, 15, 3, 7]
 k = 10
 
 print(add_to_k(num_list, k))
-print(add_to_k_recursive(numList, k))
+print(add_to_k_recursive(num_list, k))
