@@ -2,12 +2,12 @@
 
 [Published September 21, 2020](https://dev.to/erikhei/how-to-implement-stacks-and-queues-in-python-part-two-queues-4kme)
 
-[<< Week 1: Stacks](https://dev.to/erikhei/how-to-implement-stacks-and-queues-in-python-part-one-stacks-32f8)
+[<< Week 1: Stacks](https://dev.to/erikhei/how-to-implement-stacks-and-queues-in-python-part-one-stacks-32f8) | [Week 3: Miscellaneous 1 >>](https://dev.to/erikhei/whiteboarding-in-python-check-if-a-string-is-a-permutation-of-a-palindrome-2a5g)
 
 [View Solution on GitHub](https://github.com/erik-hei/whiteboarding-with-erik/blob/master/stacks-and-queues/animal_shelter.py)
 
 ![](https://live.staticflickr.com/6032/6356491405_a06f47e327_4k.jpg)
-Queue, *Aleksey Sundukov, 1986*
+Queue, *Aleksey Sundukov, 1986n (Source: Flickr.com)*
 
 *For these problems, I recommend you follow along in a Repl.it.*
 
@@ -266,6 +266,6 @@ The first animal to be adopted will be the cat, Pizzapie (shout-out to my studen
 
 And that's all for this problem. If you have any questions or feedback, feel free to leave a comment. Next week, we'll take a break from classes and try a more general whiteboarding problem. If there's a particular problem you're scratching your head at, leave it in the comments, and we might just cover it sometime!
 
-[<< Week 1: Stacks](https://dev.to/erikhei/how-to-implement-stacks-and-queues-in-python-part-one-stacks-32f8)
+[<< Week 1: Stacks](https://dev.to/erikhei/how-to-implement-stacks-and-queues-in-python-part-one-stacks-32f8) | [Week 3: Miscellaneous 1 >>](https://dev.to/erikhei/whiteboarding-in-python-check-if-a-string-is-a-permutation-of-a-palindrome-2a5g)
 
 *Erik Heikkila is a Teaching Assistant at General Assembly Seattle. This blog is not associated with GA.*
