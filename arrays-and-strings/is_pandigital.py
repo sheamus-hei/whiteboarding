@@ -25,6 +25,20 @@ def is_pandigital(num):
       return False
   return True
 
+# more optimal time 
+def is_pandigital2(num):
+  num = str(num)
+  counter = [False] * len(num)
+  for digit in num:
+    digit = int(digit)
+    if digit > len(num) or counter[digit - 1]:
+      print(counter)
+      return False
+    else:
+      counter[digit - 1] = True
+  print(counter)
+  return True
+
 print(is_pandigital(321))
 # -> True
 print(is_pandigital(123465))
