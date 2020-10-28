@@ -39,11 +39,23 @@ def is_pandigital2(num):
   print(counter)
   return True
 
+# other O(N) solution using a set
+def is_pandigital3(num):
+  num = str(num)
+  s1 = set()
+  s2 = set()
+  for n in range(len(num)):
+    s1.add(n+1)
+    s2.add(int(num[n]))
+  return s1 == s2
+
+
+
 print(is_pandigital(321))
 # -> True
-print(is_pandigital(123465))
+print(is_pandigital2(123465))
 # -> True
-print(is_pandigital(12765))
+print(is_pandigital3(12765))
 # -> False
 
 
