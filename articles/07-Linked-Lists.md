@@ -1,6 +1,6 @@
 # What are Linked Lists and How Do I Make One in Python?
 
-[<< Week 7: Misc 03](https://dev.to/erikhei/that-really-tricky-ispandigital-problem-but-in-python-59i) | [View Solution on GitHub](https://github.com/erik-hei/whiteboarding-with-erik/blob/master/linked-lists/remove-duplicates.py)
+[<< Week 7: Misc 03](https://dev.to/erikhei/that-really-tricky-ispandigital-problem-but-in-python-59i) | [View Solution on GitHub](https://github.com/erik-hei/whiteboarding-with-erik/blob/master/linked-lists/remove-duplicates.py) | [Week 9: Linked Lists II >>](https://dev.to/erikhei/modify-linked-lists-like-a-boss-in-python-565j)
 
 ![chain links](./img/chain.jpg)
 
@@ -136,6 +136,6 @@ Printed to the console. And there we go! Our linked list works.
 That's it for this week! Thanks for reading, and next week we'll look at a linked list problem, and we'll learn more about how to manipulate our linked lists, since it works a little differently than regular Python lists. As always, drop me a comment if you have any questions, or want to see more!
 
     
-[<< Week 7: Misc 03](https://dev.to/erikhei/that-really-tricky-ispandigital-problem-but-in-python-59i) | [View Solution on GitHub](https://github.com/erik-hei/whiteboarding-with-erik/blob/master/linked-lists/remove-duplicates.py) 
+[<< Week 7: Misc 03](https://dev.to/erikhei/that-really-tricky-ispandigital-problem-but-in-python-59i) | [View Solution on GitHub](https://github.com/erik-hei/whiteboarding-with-erik/blob/master/linked-lists/remove-duplicates.py) | [Week 9: Linked Lists II >>](https://dev.to/erikhei/modify-linked-lists-like-a-boss-in-python-565j)
 
 *Erik Heikkila is a Teaching Assistant at General Assembly Seattle. This blog is not associated with GA.*

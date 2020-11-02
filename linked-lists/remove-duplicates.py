@@ -33,26 +33,26 @@ class Node:
 # Remove Dups: Write code to remove duplicates from an unsorted linked list
 from collections import defaultdict
 def remove_dups(front):
-  dd = defaultdict(bool)
+  counted = defaultdict(bool)
   temp = front
-  dd[temp.data] = True
+  counted[temp.data] = True
   while (temp.next):
     # check the value of next Node
     # print("CHECKING", temp.data)
-    if (dd[temp.next.data]):
+    if (counted[temp.next.data]):
       #if found in dictionary, remove it
       temp.next = temp.next.next
     else:
-      dd[temp.next.data] = True
+      counted[temp.next.data] = True
       temp = temp.next
-  print(dd)
+  # print(dd)
 
 ll = Node(1)
 ll.append(2)
 ll.append(3)
 ll.append(3)
-ll.append(3)
 ll.append(1)
+ll.append(4)
 
 remove_dups(ll)
 

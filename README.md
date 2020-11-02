@@ -14,5 +14,6 @@
 - Week 5: [Unique String](https://dev.to/erikhei/whiteboarding-in-python-can-you-solve-this-simple-string-problem-514o)
 - Week 6: [Pandigital](https://dev.to/erikhei/that-really-tricky-ispandigital-problem-but-in-python-59i)
 - Week 7: [Linked Lists](https://dev.to/erikhei/what-are-linked-lists-and-how-do-i-make-one-in-python-8ea)
+- Week 8: [Linked Lists II](https://dev.to/erikhei/modify-linked-lists-like-a-boss-in-python-565j)
 
 <image src="https://i.redd.it/koc1i9gls7431.png" height=300>
