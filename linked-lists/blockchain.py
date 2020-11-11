@@ -1,10 +1,7 @@
 import datetime
 import math
 import pprint
-pp = pprint.PrettyPrinter(indent=4)
 
-def make_hash(prev_hash, transactor, amount):
-  return prev_hash + int(int(amount)**1.5) + ord(transactor[-1])
 
 class Block:
   def __init__(self, prev_hash, transactor, amount):
@@ -14,9 +11,9 @@ class Block:
       "time": datetime.datetime.now().time(),
       "transactor": transactor,
       "amount": amount,
-      "hash": make_hash(prev_hash, transactor, amount)
+      "hash": ""
     }
-    self.__prev_hash = prev_hash
+    self.__data["hash"] = self.make_hash()
 
   def append(self, transactor, amount):
     n = self
@@ -29,13 +26,16 @@ class Block:
   def get_data(self):
     return self.__data
 
+  def make_hash(self):
+    return self.__data["prev_hash"] + int(int(self.__data["amount"])**1.5) + ord(self.__data["transactor"][-1])
+
   def __update_hashes(self, new_prev):
     self.__data["prev_hash"] = new_prev
-    self.__data["hash"] = make_hash(new_prev, self.__data["transactor"], self.__data["amount"])
+    self.__data["hash"] = self.make_hash()
 
   def set_amount(self, amount):
     self.__data["amount"] = amount
-    self.__data["hash"] = make_hash(self.__data["prev_hash"], self.__data["transactor"], amount)
+    self.__data["hash"] = self.make_hash()
     temp = self
     while(temp.next):
       prev_hash = temp.__data["hash"]
@@ -43,6 +43,7 @@ class Block:
       temp.__update_hashes(prev_hash)
 
 def print_chain(chain):
+  pp = pprint.PrettyPrinter(indent=4)
   node = chain
   pp.pprint(node.get_data())
   while node.next:
