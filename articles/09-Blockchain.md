@@ -1,6 +1,6 @@
 # DIY Cryptocurrency - Implement a Blockchain in Python
 
-[<< 09 Linked Lists II](https://dev.to/erikhei/modify-linked-lists-like-a-boss-in-python-565j) | [View Solution on GitHub](https://github.com/erik-hei/whiteboarding-with-erik/blob/master/linked-lists/blockchain.py)
+[<< Week 8: Linked Lists II](https://dev.to/erikhei/modify-linked-lists-like-a-boss-in-python-565j) | [View Solution on GitHub](https://github.com/erik-hei/whiteboarding-with-erik/blob/master/linked-lists/blockchain.py)
 
 ![bitcoin](https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F908633080%2F960x0.jpg%3Ffit%3Dscale)
 *(Image: Forbes)*
