@@ -15,5 +15,7 @@
 - Week 6: [Pandigital](https://dev.to/erikhei/that-really-tricky-ispandigital-problem-but-in-python-59i)
 - Week 7: [Linked Lists](https://dev.to/erikhei/what-are-linked-lists-and-how-do-i-make-one-in-python-8ea)
 - Week 8: [Linked Lists II](https://dev.to/erikhei/modify-linked-lists-like-a-boss-in-python-565j)
+- Week 9: [Blockchain](https://dev.to/erikhei/diy-cryptocurrency-implement-a-blockchain-in-python-4a9m)
+- Week 10: [More Strings](https://dev.to/erikhei/back-to-basics-more-strings-in-python-3cn1)
 
 <image src="https://i.redd.it/koc1i9gls7431.png" height=300>

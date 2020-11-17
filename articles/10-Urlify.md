@@ -24,7 +24,7 @@ Next, let's take a look at the fine print: *ignore any additional white space at
 		
 Let's think about addressing these spaces. We could loop through the string and look at each character, checking if it's a space, and if so, replace it. However, there's an easier way to do this. Python has some built in methods to split a string based on a given character. Then, we can join them back together with "%20" replacing the spaces. 
 
-Start by calling the `split()` method. We can call this after our `.strip(). The method takes one argument, the divider character, which in our case is " ", a single space.
+Start by calling the `split()` method. We can call this after our `.strip()`. The method takes one argument, the divider character, which in our case is " ", a single space.
 
 	def urlify(s):
 	  s = s.strip().split(" ")
