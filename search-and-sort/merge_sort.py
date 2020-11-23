@@ -1,32 +1,41 @@
-# Python program for implementation of MergeSort 
-def mergeSort(arr): 
-  if len(arr) >1: 
-    mid = len(arr)//2 #Finding the mid of the array 
-    L = arr[:mid] # Dividing the array elements  
-    R = arr[mid:] # into 2 halves 
-    print("left", L, "and right", R)
-    mergeSort(L) # Sorting the first half 
-    mergeSort(R) # Sorting the second half 
+# source: https://www.geeksforgeeks.org/merge-sort/
+
+def merge_sort(nums): 
+  if len(nums) > 1: 
+    mid = len(nums)//2
+    left = nums[:mid] 
+    right = nums[mid:]
+    merge_sort(left) 
+    merge_sort(right) 
 
     i = j = k = 0
       
-    # Copy data to temp arrays L[] and R[] 
-    while i < len(L) and j < len(R): 
-        if L[i] < R[j]: 
-            arr[k] = L[i] 
+    while i < len(left) and j < len(right): 
+        if left[i] < right[j]: 
+            nums[k] = left[i] 
             i+=1
         else: 
-            arr[k] = R[j] 
+            nums[k] = right[j] 
             j+=1
         k+=1
-      
-    # Checking if any element was left 
-    while i < len(L): 
-        arr[k] = L[i] 
+
+    while i < len(left): 
+        nums[k] = left[i] 
         i+=1
         k+=1
       
-    while j < len(R): 
-        arr[k] = R[j] 
+    while j < len(right): 
+        nums[k] = right[j] 
         j+=1
         k+=1
+
+nums = [5,2,3,6,84,9,8]
+merge_sort(nums)
+print(nums)
+# -> [2, 3, 5, 6, 8, 9, 84]
+
+# works on other sortable data types
+words = ["banana", "apple", "grape", "orange"]
+merge_sort(words)
+print(words)
+# -> ['apple', 'banana', 'grape', 'orange']
