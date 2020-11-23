@@ -4,12 +4,12 @@
 
 It's the age old question. *"I have a list of things and I want to sort them. What do?"* 
 
-[bunch of legos](https://ichef.bbci.co.uk/news/800/cpsprodpb/92F3/production/_114391673_gettyimages-1158923430.jpg)
+![bunch of legos](https://ichef.bbci.co.uk/news/800/cpsprodpb/92F3/production/_114391673_gettyimages-1158923430.jpg)
 *(Image: BBC)*
 
 Well, clearly, the most intuitive answer is to take the list, divide it in half, and in half and in half until you have a bunch of lists 1 length long, and then put each pair back together in the right order, and then put the little sorted pairs together in bigger sorted pairs, and then again until you have a full list, but sorted. Is that what you were thinking? 
 
-[merge sort diagram](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Merge_sort_algorithm_diagram.svg/600px-Merge_sort_algorithm_diagram.svg.png)
+![merge sort diagram](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Merge_sort_algorithm_diagram.svg/600px-Merge_sort_algorithm_diagram.svg.png)
 *Looks something like this. (Source: Wikipedia)*
 
 Okay, so maybe it's not the most intuitive solution, but I'll spare you the tedious hand holding of walking through inferior search algorithms like bubble sort and bogo sort (\*shudder\*) before explaining merge sort. What you need to know is that merge sort has a pretty good runtime compared to other algorithms, which, as you may have guessed from the whole "split in half" thing, is O(N log N). 
@@ -119,7 +119,7 @@ Let's sort some numbers. Make a list of numbers, and call `merge_sort()` on them
 	
 This should give you the sorted list, `[2, 3, 5, 6, 8, 9, 84]`. As mentioned before, this will also work with strings. Giving the list `['banana', 'apple', 'grape', 'orange']` will sort alphabetically to `['apple', 'banana', 'grape', 'orange']`.
 
-I hope this gave you some clarity on how merge sort works. Python's `.sort()` method is similar to merge sort and is another "divide and conquer" algorithm, and has about the same time complexity. So, there's not really a reason you would have to implement merge sort...unless you're asked to do so on an technical interview. Good luck out there!
+I hope this gave you some clarity on how merge sort works. Python's `.sort()` method is similar to merge sort and is another "divide and conquer" algorithm, and has about the same time complexity. So, there's not really a reason you would have to implement merge sort...unless you're asked to do so on an technical interview. I hope this helped to prepare you for that!
 
 [<< Week 10: Urlify](https://dev.to/erikhei/back-to-basics-more-strings-in-python-3cn1) | [View Solution on GitHub](https://github.com/erik-hei/whiteboarding-with-erik/blob/master/search-and-sort/merge_sort.py)
 
