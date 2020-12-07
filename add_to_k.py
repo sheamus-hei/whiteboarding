@@ -3,7 +3,6 @@
 
 # Brute force: loop through the list N times and add up all the numbers
 def add_to_k(numbers, k):
-# for (let i = 0; i < numbers.length; i++)
   for i in range(len(numbers) - 1):
     current = numbers[i]
     for j in range(i + 1, len(numbers)):
@@ -12,13 +11,13 @@ def add_to_k(numbers, k):
         return True
   return False    
 
-def add_to_k_recursive(numbers, num):
+def add_to_k_recursive(numbers, k):
   if (len(numbers) < 2):
     return False
-  elif numbers[0] + numbers[-1] == num:
+  elif numbers[0] + numbers[-1] == k:
     return True
   else:
-    return add_to_k_recursive(numbers[:-1], num) or add_to_k_recursive(numbers[1:], num)
+    return add_to_k_recursive(numbers[:-1], k) or add_to_k_recursive(numbers[1:], k)
 
 num_list = [10, 15, 3, 7]
 k = 10
