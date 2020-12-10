@@ -4,6 +4,8 @@
 
 ![cat on roomba](https://media.giphy.com/media/hO0X9iUHoCpvG/giphy.gif)
 
+<h1>Hello</h1>
+
 *My ride is here. (Image: Catcheckup.com)*
 
 I'm sure you remember when Roombas first came out, and they were all the rage. Where are they now? Is our humble explorer still roaming the endless carpet of a [McMansion bedroom ensuite](https://mcmansionhell.com/post/628714198070902784/the-mcmansion-hell-yearbook-1976) that it hasn't left since 2007? 
