@@ -17,5 +17,9 @@
 - Week 8: [Linked Lists II](https://dev.to/erikhei/modify-linked-lists-like-a-boss-in-python-565j)
 - Week 9: [Blockchain](https://dev.to/erikhei/diy-cryptocurrency-implement-a-blockchain-in-python-4a9m)
 - Week 10: [More Strings](https://dev.to/erikhei/back-to-basics-more-strings-in-python-3cn1)
+- Week 11: [Merge Sort](https://dev.to/erikhei/merge-sort-when-you-re-too-much-of-a-nerd-to-use-sort-34ki)
+- Week 12: [Robot Vacuum](https://dev.to/erikhei/robot-vacuum-in-python-bring-him-home-2gig)
+- Week 13: [Diving Board](https://dev.to/erikhei/dive-into-python-with-this-diving-board-problem-ft-recursion-453p)
+- Week 14: [Random Number](https://dev.to/erikhei/more-python-practice-find-the-random-number-ft-sets-50lf)
 
 <image src="https://i.redd.it/koc1i9gls7431.png" height=300>
