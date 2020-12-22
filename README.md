@@ -21,5 +21,6 @@
 - Week 12: [Robot Vacuum](https://dev.to/erikhei/robot-vacuum-in-python-bring-him-home-2gig)
 - Week 13: [Diving Board](https://dev.to/erikhei/dive-into-python-with-this-diving-board-problem-ft-recursion-453p)
 - Week 14: [Random Number](https://dev.to/erikhei/more-python-practice-find-the-random-number-ft-sets-50lf)
+- Week 15 [Binary Trees](https://dev.to/erikhei/binary-christmas-trees-learn-the-three-simplest-tree-traversals-in-python-41ch)
 
 <image src="https://i.redd.it/koc1i9gls7431.png" height=300>

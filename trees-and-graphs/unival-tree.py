@@ -16,15 +16,41 @@ class TreeNode:
     self.left = None
     self.right = None
   
-  def print_node(self):
-    print(self.value)
 
- # prints the nodes from the leaves up
+# prints the parent before each child
+def pre_order(node):
+  if node:
+    print(node.value)
+    pre_order(node.left)
+    pre_order(node.right)
+
+# prints children and then parent
 def post_order(node):
   if node:
     post_order(node.left)
     post_order(node.right)
-    node.print_node()
+    print(node.value)
+
+# prints left child, parent, then right child
+def in_order(node):
+  if node:
+    in_order(node.left)
+    print(node.value)
+    in_order(node.right)
+
+
+tree = TreeNode(1)
+tree.left = TreeNode(2)
+tree.right = TreeNode(3)
+tree.left.left = TreeNode(4)
+tree.left.right = TreeNode(5)
+
+print("PRE-ORDER")
+pre_order(tree)
+print("POST-ORDER")
+post_order(tree)
+print("IN-ORDER")
+in_order(tree)
 
 def unival_trees(node, count):
   if node:
