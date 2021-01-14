@@ -42,14 +42,14 @@ def knapsack(cap, values, weights):
         k += 1
       items.insert(k, itemInfo)
   total = 0
-  capLeft = cap
+  cap_left = cap
   for item in items:
-    if capLeft - item['weight'] >= 0 :
+    if cap_left - item['weight'] >= 0 :
       total += item['weight'] * item['vpw']
-      capLeft -= item['weight']
-    elif capLeft > 0:
-      total += item['vpw'] * capLeft
-      capLeft = 0
+      cap_left -= item['weight']
+    elif cap_left > 0:
+      total += item['vpw'] * cap_left
+      cap_left = 0
   return total
 
 
