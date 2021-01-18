@@ -1,4 +1,4 @@
-# Commonly Encountered Bugs in Unit2/Express/Ejs/Sequelize
+# Commonly Encountered Bugs in Unit2 / Express / EJS / Sequelize
 
 ### 1. Missing route
 
@@ -18,13 +18,13 @@ This means that you don't have that route defined anywhere. Check your `server.j
 
 * If you're running accross the error in a redirect, it could be that you're giving the ejs file name instead of the route you want to redirect to. `res.redirect` should always be given a route name, e.g. `res.redirect('/faves')`.
 
-* Check to make sure the route isn't defined after the ID route. For example, if you have `/pokemon/types` defined after `/pokemon/:id` route, the string `'types'` will get processed as the id! Just move `router.get('/pokemon/types',` up above where you have `router.get('pokemon/:id',` so that it gets processed first. 
+* Check to make sure the route isn't defined after the ID route. For example, if you have `/dogs/types` defined after `/dogs/:id` route, the string `'types'` will get processed as the id! Just move `router.get('/dogs/types',` up above where you have `router.get('/dogs/:id',` so that it gets processed first. 
 
 * Make sure your controller is linked to the server. The line `module.exports = router;` should be at the end of your controller, and your `server.js` should require it:
 
 `app.use('/pokemon', require('./routes/pokemon'));`
 
-* See how the routes are mounted on each controller. For instance, if you are trying to access `/pokemon`, a route listed in the `pokemon.js` controller as `router.get('/pokemon',` will actually be at `/pokemon/pokemon` since every route on that page already has `/pokemon` in front of it. The route should instead be defined as `router.get('/',` in `pokemon.js`. 
+* See how the routes are mounted on each controller. For instance, if you are trying to access `/dogs`, a route listed in the `dogs.js` controller as `router.get('/dogs',` will actually be at `/dogs/dogs` since every route on that page already has `/dogs` in front of it. The route should instead be defined as `router.get('/',` in `dogs.js`. 
 
 
 ### 2. Route vs. file path
@@ -37,25 +37,25 @@ This means that you don't have that route defined anywhere. Check your `server.j
 
 Look at the differences between redirect and render. *Redirect* takes a *route* and *Render* takes a *file path*, e.g. the EJS file in the `views` directory, along with any information you want to pass to that page. Here are some examples:
 
-* **`res.redirect('/pokemon');`** - redirects to the route `/pokemon`
+* **`res.redirect('/dogs');`** - redirects to the route `/dogs`
 
-* **`res.render('pokemon', {pokes: response.data });`** - renders the file `pokemon.ejs` in the `views` directory and passes `response.data` as the variable `pokes`
+* **`res.render('dogs', {breeds: response.data });`** - renders the file `dogs.ejs` in the `views` directory and passes `response.data` as the variable `breeds`
 
 Otherwise, make sure you have the correct file in your `views` directory.
 
-### 3. Id in route
+### 3. ID in route
 
 **Error:**
 
-A redirect or link to an ID route is not working
+A redirect or link to an ID route is not working.
 
 **Solution:**
 
-Make sure you are actually referring to the ID you need. `/:id` only appears in the definition of a route:
+Make sure you are actually referring to the ID you need. `/:id` ONLY appears in the definition of a route:
 
  `router.get('/faves/:id',`
 
-In EJS, you need to get the id (usally in a forEach loop) from that item:
+In EJS, you need to get the id (usally in a `forEach` loop) from that item:
 
 `<a href="/faves/<%= fave.id %>`
 
@@ -71,7 +71,7 @@ And in a redirect on your server or controller, you need to use string interpola
 
 **Solution:**
 
-You need to import the `models` folder as `db` on your server or controller file. Check to see where the `models` directory is located relative to the folder you're in. For example, do you need to go up a level and have `../models` instead of `./models`? 
+You need to import the `models` folder as `db` on your server or controller file. Check to see where the `models` directory is located relative to the folder you're in. For example, do you need to go up a level and require `../models` instead of `./models`? 
 
 
 ### 5. Incorrect model reference
@@ -99,6 +99,6 @@ If your form body is getting passed as `undefined` (when you console log it in t
 
 **Solution**
 
-You may need to install that package. Check your `package.json` to see if it is listed in the `dependencies`. If not, in your terminal, install using `npm i my-package-name`. If it is already listed in your `package.json`, just try `npm i`. Then, be sure to require the package in your server, i.e. `const axios = require('axios');`
+You might need to install that package. Check your `package.json` to see if it is listed in the `dependencies`. If not, in your terminal, install using `npm i my-package-name`. If it is already listed in your `package.json`, just try `npm i`. Then, be sure to require the package in your server, i.e. `const axios = require('axios');`
 
 
