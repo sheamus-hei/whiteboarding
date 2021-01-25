@@ -21,6 +21,9 @@
 - Week 12: [Robot Vacuum](https://dev.to/erikhei/robot-vacuum-in-python-bring-him-home-2gig)
 - Week 13: [Diving Board](https://dev.to/erikhei/dive-into-python-with-this-diving-board-problem-ft-recursion-453p)
 - Week 14: [Random Number](https://dev.to/erikhei/more-python-practice-find-the-random-number-ft-sets-50lf)
-- Week 15 [Binary Trees](https://dev.to/erikhei/binary-christmas-trees-learn-the-three-simplest-tree-traversals-in-python-41ch)
+- Week 15: [Binary Trees](https://dev.to/erikhei/binary-christmas-trees-learn-the-three-simplest-tree-traversals-in-python-41ch)
+- Week 16: [Find Substrings](https://dev.to/erikhei/more-python-strings-can-you-solve-this-more-difficult-string-problem-2lfj)
+- Week 17: [Knapsack](https://dev.to/erikhei/help-pierre-the-py-pirate-solve-this-knapsack-problem-7jo)
+- Week 18: [Web Crawling (Beautiful Soup)](https://dev.to/erikhei/web-crawling-in-python-dive-into-beautiful-soup-4bdd)
 
 <image src="https://i.redd.it/koc1i9gls7431.png" height=300>

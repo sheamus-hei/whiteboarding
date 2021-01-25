@@ -2,7 +2,10 @@
 
 [< Week 17: Knapsack](https://dev.to/erikhei/help-pierre-the-py-pirate-solve-this-knapsack-problem-7jo) | [View Solution on GitHub](https://github.com/erik-hei/whiteboarding-with-erik/blob/master/misc/web_scraping.py)
 
-No, not actually dive in. Beautiful Soup is a webscraping Python library, and however difficult you thought webscraping would be, Beatiful Soup makes it so much easier. For instance, I used it on one [project](https://github.com/erik-hei/lyrical), when I had to scrape the Genius website, since their API doesn't actually provide song lyrics (I know right? You had one job, Genius). 
+![alphabet soup](https://img.sndimg.com/food/image/upload/c_thumb,q_80,w_562,h_316/v1/img/recipes/11/21/33/picZciKrq.jpg)
+*(Image: Food.com)*
+
+What is Beautiful Soup? Something your mom makes for you on a cold January day? I hope so. Beautiful Soup is a webscraping Python library, and however difficult you thought webscraping would be, Beatiful Soup makes it so much easier. For instance, I used it on one [project](https://github.com/erik-hei/lyrical), when I had to scrape the Genius website, since their API doesn't actually provide song lyrics (I know right? You had one job, Genius). 
 
 Let's look at a sample technical interview question:
 
@@ -23,7 +26,7 @@ We're given the Microsoft wikipedia page, and we want to find the most common wo
 
 ## 1. Setup and Installation
 
-First we need to import Beautiful Soup. Install from the command line via `pip install bs4` (or however you have pip configured) Check the [documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) if you're having issues with installation. 
+First we need to import Beautiful Soup. Install from the command line via `pip3 install bs4` (or however you have pip configured). Check the [documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) if you're having issues with installation. 
 
 Then, let's require our library at the top of the code. Here's everything we'll need:
 
@@ -43,7 +46,7 @@ Let's get our page and parse it with Beautiful soup. To get the page, we use the
 
 	  page = requests.get("https://en.wikipedia.org/wiki/Microsoft")
 
-Next, we parse the page text using BeautifulSoup.
+Next, we parse the page text using Beautiful Soup.
 
 	  soup = BeautifulSoup(page.text, "html.parser")
 	  
@@ -69,18 +72,18 @@ For some reason, Wikipedia seems to have all their content in one div. This mean
 	  
 ## 3. Count the Words
 
-Let's initialize a couple variables. We'll need the most common word and the number of times it appears. We'll also use a dictionary to store the count of each word. Knowing me, we'll use a default dicitonary for this (as a review, the we can set the default type to integers, so if we access a key with no values, the defalut value is 0). 
+Let's initialize a couple variables. We'll need the most common word and the number of times it appears. We'll also use a dictionary to store the count of each word. If you've been following this blog, you've probably guessed that we'll use a default dicitonary for this (if you don't remember, we can set the dictionary's default type to integers. That way, if we access a key that doesn't exist, the default value is already 0). 
 
 	  max_count = 0
 	  max_word = ""
 	  dd = defaultdict(int)
 	
-Now, we're ready to crawl. Let's loop through `history` and look at each element, `elem`. However, Beautiful Soup sometimes returns something called a "Navigable String" instead of an element. We'll filter out everything that isn't an element using the `isinstance()` method from out library.
+Now, we're ready to crawl. Let's loop through `history` and look at each element, `elem`. However, Beautiful Soup sometimes returns something called a "Navigable String" instead of an element. We'll filter out everything that isn't an element using the `isinstance()` method from our library.
 
 	  for elem in history:
 	    if isinstance(elem, Tag):
 	        
-Let's think of what happens next. We need to look at the text for each element in history, and count the instance of each word. However, remember, we need to stop when we're no longer in the history section. The next section is the same div, but starts with an `<h2>` tag. Then, we can end the function by printing the most common word and its count. I'll return `max_count`.
+Let's think of what happens next. We need to look at the text for each element in `history`, and count the instance of each word. However, remember, we need to stop when we're no longer in the history section. The next section is the same div, but starts with an `<h2>` tag. Then, we can end the function by printing the most common word and its count. I'll return `max_count`.
 
 	  for elem in history:
 	    if isinstance(elem, Tag):
@@ -92,7 +95,7 @@ But what if it's not the end of the section? We need to get the text by calling 
 
 	      words = elem.get_text().split()
 	      
-What's next? Loop through each word and update its count in the dictionary. Since we're using a dictionary, we don't have to check to see if the word is already in there before adding 1 to it. Also, don't forget to update the `max_word` and `max_count` if we find a word that's more common than what we had previously. 
+What's next? Loop through each word and update its count in the dictionary. Since we're using a default dictionary, we don't have to check to see if the word is already in there before adding 1 to it. Also, don't forget to update the `max_word` and `max_count` if we find a word that's more common than what we had previously. 
 
 	      for word in words:
 	        dd[word] += 1
@@ -100,7 +103,7 @@ What's next? Loop through each word and update its count in the dictionary. Sinc
 	          max_count = dd[word]
 	          max_word = word 
 
-And that's it! The code should work...unless Wikipedia changes the layout of their site. I'll add a final check at the end in case that happens. Altogether:
+And that's it! The code should work...unless Wikipedia changes the layout of their site. Let's add a final check at the end in case that happens. Altogether:
 	
 	from bs4 import BeautifulSoup, Tag
 	import requests
@@ -137,10 +140,9 @@ This function prints the result, so we can simply run it with `find_most_common(
 	the is the most common, appearing 221 times.
 	  
 	  
-And there you have it! Granted, this function only works for this specific page, at the time of writing this--the main problem with web crawling is that it can break if the website owner alters their content in the slightest fashion. We also didn't account for casing or punctuation. Just a few things to think about. See you next time!
+And there you have it! Granted, this function only works for this specific page, at the time of writing this--the main problem with web crawling is that it can break if the website owner alters their content in the slightest fashion. We also didn't account for casing or punctuation, something you may want to try and implement on your own. Just a few things to think about. See you next time!
 
 [< Week 17: Knapsack](https://dev.to/erikhei/help-pierre-the-py-pirate-solve-this-knapsack-problem-7jo) | [View Solution on GitHub](https://github.com/erik-hei/whiteboarding-with-erik/blob/master/misc/web_scraping.py)
-
 
 
 *Erik Heikkila is a Teaching Assistant at General Assembly. This blog is not associated with GA.*
