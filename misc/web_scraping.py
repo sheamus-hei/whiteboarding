@@ -20,15 +20,14 @@
 # on  59
 # Windows 55
 # for 50
-from collections import defaultdict
-
 from bs4 import BeautifulSoup, Tag
 import requests
+
+from collections import defaultdict
 
 def find_most_common():
   page = requests.get("https://en.wikipedia.org/wiki/Microsoft")
   soup = BeautifulSoup(page.text, "html.parser")
-  #soup = [s.extract() for s in soup('script')]
   history = soup.find(id="History").parent.next_siblings
   max_count = 0
   max_word = ""
@@ -37,7 +36,7 @@ def find_most_common():
   for elem in history:
     if isinstance(elem, Tag):
       if elem.name == "h2":
-        print(max_word, "is the most common")
+        print(max_word, "is the most common, appearing", max_count, "times.")
         return max_count
       words = elem.get_text().split()
       for word in words:
@@ -47,6 +46,5 @@ def find_most_common():
           max_word = word
 
   return "Error"
-    
 
 print(find_most_common())
