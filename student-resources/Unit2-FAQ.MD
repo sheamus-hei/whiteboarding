@@ -15,6 +15,7 @@ This means that you don't have that route defined anywhere. Check your `server.j
 * If you are using method override, make sure you have the `method-override` required on your server/controller, so that it actually calls DELETE or PUT instead of POST. 
 
 `const methodOverride = require('method-override');`
+`router.use(methodOverride('_method'));` (or `app.use` if applicable)
 
 * If you're running accross the error in a redirect, it could be that you're giving the ejs file name instead of the route you want to redirect to. `res.redirect` should always be given a route name, e.g. `res.redirect('/faves')`.
 
