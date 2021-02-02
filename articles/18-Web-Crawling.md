@@ -14,7 +14,7 @@ Let's look at a sample technical interview question:
 	# the count of that word.
 	
 	# Page to crawl:
-	# https://en.wikipedia.org/wiki/Microsoft
+	# https://en.wikipedia.org/wiki/Apple_Inc.
 	
 	# Only words from the section “history” should be accounted for.
 	
@@ -22,7 +22,7 @@ Let's look at a sample technical interview question:
 	#     # of occurrences
 	# The 205
 	
-We're given the Microsoft wikipedia page, and we want to find the most common word in the "history" section. So let's get started. 
+We're given the Apple wikipedia page, and we want to find the most common word in the "history" section. So let's get started. 
 
 ## 1. Setup and Installation
 
@@ -44,7 +44,7 @@ Next, we're ready to define our function.
 
 Let's get our page and parse it with Beautiful soup. To get the page, we use the `requests` library:
 
-	  page = requests.get("https://en.wikipedia.org/wiki/Microsoft")
+	  page = requests.get("https://en.wikipedia.org/wiki/Apple_Inc.")
 
 Next, we parse the page text using Beautiful Soup.
 
@@ -59,12 +59,12 @@ How do we get just the history section? We have to take a look at the HTML of th
 	<div ...>...</div>
 	<h3>
 		<span ...></span>
-		<span class="mw-headline" id="1972–1985:_Founding">1972–1985: Founding</span>
+		<span class="mw-headline" id="1976–1984:_Founding_and_incorporation">1976–1984: Founding and incorporation</span>
 	</h3>
 	.
 	.
 	.
-	<p>Childhood friends <a href="/wiki/Bill_Gates" title="Bill Gates">Bill Gates</a> and <a href="/wiki/Paul_Allen" title="Paul Allen">Paul Allen</a> sought to make a business using their skills in <a href="/wiki/Computer_programming" title="Computer programming">computer programming</a>.....
+	<p>Apple Computer Company was founded on April 1, 1976, by <a href="/wiki/Steve_Jobs" title="Steve Jobs">Steve Jobs</a>...
 
 For some reason, Wikipedia seems to have all their content in one div. This means that the "history" section is not its own div, but a header and some stuff inside a parent div, which contains all the sections. To get only the history section, the best we can do for now is to just grab that header and everything after it. We grab the `<span>` tag with ID "History", and then go to its parent, the `<h2>`. To get everything after it, we can use the BeautifulSoup notation, `next_siblings`. Altogether:
 
@@ -111,7 +111,7 @@ And that's it! The code should work...unless Wikipedia changes the layout of the
 	from collections import defaultdict
 	
 	def find_most_common():
-	  page = requests.get("https://en.wikipedia.org/wiki/Microsoft")
+	  page = requests.get("https://en.wikipedia.org/wiki/Apple_Inc.")
 	  soup = BeautifulSoup(page.text, "html.parser")
 	  history = soup.find(id="History").parent.next_siblings
 	  max_count = 0
@@ -137,7 +137,7 @@ And that's it! The code should work...unless Wikipedia changes the layout of the
 This function prints the result, so we can simply run it with `find_most_common()`. Running the code gives us the result:
 
 
-	the is the most common, appearing 221 times.
+	the is the most common, appearing 328 times.
 	  
 	  
 And there you have it! Granted, this function only works for this specific page, at the time of writing this--the main problem with web crawling is that it can break if the website owner alters their content in the slightest fashion. We also didn't account for casing or punctuation, something you may want to try and implement on your own. Just a few things to think about. See you next time!

@@ -6,7 +6,7 @@
 # -   Words to exclude from the search
 # Your code (only the source code, no binaries) should be returned as a zip.  The code should build into an executable console application. 
 # Page to crawl
-# https://en.wikipedia.org/wiki/Microsoft
+# https://en.wikipedia.org/wiki/Apple_Inc.
 # Only words from the section “history” should be accounted for.
 # Example of the expected result
 #     # of occurrences
@@ -26,7 +26,7 @@ import requests
 from collections import defaultdict
 
 def find_most_common():
-  page = requests.get("https://en.wikipedia.org/wiki/Microsoft")
+  page = requests.get("https://en.wikipedia.org/wiki/Apple_Inc.")
   soup = BeautifulSoup(page.text, "html.parser")
   history = soup.find(id="History").parent.next_siblings
   max_count = 0
