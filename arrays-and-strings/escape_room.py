@@ -19,6 +19,7 @@ from collections import defaultdict
 
 def word_helper(word, keypad_letters):
   for letter in word:
+    letter = letter.lower()
     if keypad_letters[letter] == 0:
       return 0
   print(word, "is ok")
@@ -39,7 +40,7 @@ def word_finder(wordlist, keypads):
       #   keypad_letters[letter] = 1
       keypad_letters[letter] += 1
     for word in wordlist:
-      if key in word:
+      if key in word or key.upper() in word:
         words_contained += word_helper(word, keypad_letters)
     outputs.append(words_contained)
   return outputs
@@ -48,4 +49,4 @@ words = open('dictionary.txt', 'r').read().split('\n')
 # print(words)
 wordlist = ['APPLE', 'PLEAS', 'PLEASE'] 
 keypads = ['AELWXYZ', 'AELPXYZ', 'AELPSXY', 'SAELPRT', 'XAEBKSY']
-print(word_finder(words, keypads))
+print(word_finder(wordlist, keypads))
