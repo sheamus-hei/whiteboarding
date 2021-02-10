@@ -2,13 +2,16 @@
 
 [< Week 18: Webcrawling](https://dev.to/erikhei/web-crawling-in-python-dive-into-beautiful-soup-4bdd) | [View Solution on GitHub](https://github.com/erik-hei/whiteboarding-with-erik/blob/master/js-specific/arrUtilities.js)
 
-Python will always be my first love, being the first language I ever learned (sorry, Java, not counting you). Its versatility and built-in librarys make for a wide range of applications, including data structures and algorithms. JavaScript on the other hand, being functional instead of object-oriented, is less so-equipped. However, being the de-facto language of the internet, its applications are widespread on the front end, including high-tech frameworks like React and Vue. 
+![js function to make a sandwhich](https://www.codeanalogies.com/img/funcblog/codeblock1.png)
+(Image: codeanalogies.com)
 
-You might be wondering, what kind of questions might a company ask on a JavaScript technical interview? Functions! I know, shocker, the key to functional programming is functions. So today, we'll look at three built-in array methods and try to implement them on our own. By doing so, I hope this will help you get more familiar with using these hip "callbacks" that show up everywhere in JavaScript.
+Python will always be my first love, being the first programming language  I ever learned (sorry, Java, not counting you). Its versatility and built-in librarys make for a wide range of applications, including data structures and algorithms. JavaScript on the other hand, being functional instead of object-oriented, is less so-equipped. However, being the de-facto language of the internet, its applications are widespread on the front end, including high-tech frameworks like React and Vue. 
+
+You might be wondering, what kind of questions might a company ask on a JavaScript technical interview? Functions! I know, shocker, the key to functional programming is functions. So today, we'll look at three built-in array methods and try to implement them on our own. By doing so, I hope this will help you get more familiar with using these hip "callback" things that tend to pop up everywhere in JavaScript coding.
 
 ## 1. `.map()`
 
-The Array.map() function can be called on an array to, in layman's terms, take each item and replace it (or "map" it) with something else. This is commonly used in applications like React to turn raw data, such as `["milk", "eggs", "butter"]` into something more html-friendly, such as list items: 
+The Array.map() function can be called on an array to, simpy put, take each item and replace it (or "map" it) with something else. This is commonly used in applications like React to turn raw data, like`["milk", "eggs", "butter"]` into something more html-friendly, such as list items: 
 
 	[
 		"<li>milk</li>", 
@@ -29,7 +32,7 @@ We could achieve this by calling `.map()`, which takes a callback function as an
 
 More on the map function [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map). So how would we build it on our own?
 
-We'll define our homegrown map funciton as `myMap`, and it will take two arguments, the array and the callback function.
+We'll define our homegrown map funciton as `myMap`, and it will take two arguments, the array `arr` and the callback function `cb`.
 
 	function myMap(arr, cb) {
 	
@@ -82,13 +85,13 @@ And we're done! To try it out, we can try making our grocery list again:
 	
 ## 2. `.filter()`
 
-The Array.filter() method takes a callback which returns a boolean, and if that boolean is false, removes that item from the array. Essentially, it filters out unimportant elements based on the criteria of the function. 
+The Array.filter() method takes a callback which returns a boolean, and if that boolean is false, removes that item from the array. Essentially, it filters out unimportant elements based on the function's criteria.
 
 For example, we might want to remove even numbers from a list. We have our list, `nums`, and a function `isOdd` that returns `true` if the given number is odd. 
 
 	let nums = [1, 2, 3, 4, 5];
 	let isOdd = (num) => {
-	  return num % 2 == 1;
+	  return num % 2 === 1;
 	}
 	
 	console.log(nums.filter(isOdd));
@@ -146,7 +149,7 @@ This function might be one you didn't encounter in class (at least, not for me).
 	// let nums = [1, 2, 3, 4, 5];
 	console.log(nums.reduce(mult));	
 	
-The console should print `120`, which is the product of all those numbers. You'll notice that functions used by `.map()` usually take two arguments: a previous value and a current value. This effectively chains all the values together by calling the callback function repeatedly on the previous value. We'll stick to this basic functionality for now, but if you look at the [documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce), `.reduce()` can take a couple other arguments. 
+The console should print `120`, which is the product of all those numbers. You'll notice that functions used by `.reduce()` usually take two arguments: a previous value `prev` and a current value `curr`. This effectively chains all the values together by calling the callback function repeatedly on the previous value. We'll stick to this basic functionality for now, but if you look at the [documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce), `.reduce()` can take a couple other arguments. 
 
 Let's try it on our own. The function will take in an array and a callback, as usual. 
 
@@ -188,7 +191,7 @@ Let's try it out. Pass in the `nums` array and `mult` function, and we should ge
 	console.log(myReduce(nums, mult));
 	// => 120
 	
-And that's it, we've explored and implemented three JavaScript array methods. I hope this helped you gain a better understanding of callback functions, enough to ace that JavaScript interview. If you're hungry for more, check out [these lessons](https://johnresig.com/apps/learn/) on advanced JS topics. 
+And that's it, we've explored and implemented three JavaScript array methods. I hope this helped you gain a better understanding of callback functions, enough to ace that JavaScript interview. If you're hungry for more, check out [these lessons](https://johnresig.com/apps/learn/) on advanced JS topics. See you next time!
 
 [< Week 18: Webcrawling](https://dev.to/erikhei/web-crawling-in-python-dive-into-beautiful-soup-4bdd) | [View Solution on GitHub](https://github.com/erik-hei/whiteboarding-with-erik/blob/master/js-specific/arrUtilities.js)
 
