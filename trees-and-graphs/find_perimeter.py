@@ -4,6 +4,17 @@ grid = [
   [0, 0, 0]
 ]
 
+grid = [
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 1, 1, 1, 1, 1, 1, 0],
+  [0, 1, 2, 0, 0, 2, 1, 0],
+  [0, 1, 2, 0, 0, 2, 1, 0],
+  [0, 1, 2, 0, 0, 2, 1, 0],
+  [0, 1, 2, 0, 0, 2, 1, 0],
+  [0, 1, 1, 1, 1, 1, 1, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0]
+]
+
 def find_perimeter(grid, startX, startY):
   sizeX = len(grid[0]) 
   sizeY = len(grid)
@@ -33,4 +44,4 @@ def find_perimeter(grid, startX, startY):
 
   return perimeter
 
-print(find_perimeter(grid, 0, 0))
+print(find_perimeter(grid, 1, 1))
