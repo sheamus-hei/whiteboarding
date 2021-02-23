@@ -20,24 +20,24 @@ def height(node):
     return 0
   l_height = height(node.left)
   r_height = height(node.right)
-  if l_height > r_height:
-    return l_height + 1
-  return r_height + 1
+
+  return max(l_height, r_height) + 1
 
 # following two methods print breadth first traversal
-def print_given_level(root, level):
+# source: https://www.geeksforgeeks.org/level-order-tree-traversal/
+def print_level(root, level):
   if not root:
     return
-  if level == 1:
-    print(root.value, end=" ")
-  elif level > 1:
-    print_given_level(root.left, level-1)
-    print_given_level(root.right, level-1)
+  if level == 0:
+    print(root.value)
+  elif level > 0:
+    print_level(root.left, level - 1)
+    print_level(root.right, level - 1)
 
-def print_level_order(root):
+def breadth_first(root):
   h = height(root)
-  for i in range(1, h+1):
-    print_given_level(root, i)
+  for i in range(h):
+    print_level(root, i)
 
 # following two methods are for the interview question
 def traverse_levels(root, level):
@@ -70,12 +70,13 @@ root.left.right.right = TreeNode(11)
 root.right.right = TreeNode(9)
 root.right.right.left = TreeNode(4)
 
-# root = TreeNode(1)
-# root.left = TreeNode(2)
-# root.right = TreeNode(3)
-# root.left.left = TreeNode(4)
-# root.left.right = TreeNode(5)
+tree = TreeNode(1)
+tree.left = TreeNode(2)
+tree.right = TreeNode(3)
+tree.left.left = TreeNode(4)
+tree.left.right = TreeNode(5)
 
 # pre_order(root)
-print("Height:", height(root))
-print(level_min_sum(root))
+# print("Height:", height(root))
+# print(level_min_sum(root))
+breadth_first(tree)

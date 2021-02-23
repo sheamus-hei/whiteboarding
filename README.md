@@ -25,5 +25,8 @@
 - Week 16: [Find Substrings](https://dev.to/erikhei/more-python-strings-can-you-solve-this-more-difficult-string-problem-2lfj)
 - Week 17: [Knapsack](https://dev.to/erikhei/help-pierre-the-py-pirate-solve-this-knapsack-problem-7jo)
 - Week 18: [Web Crawling (Beautiful Soup)](https://dev.to/erikhei/web-crawling-in-python-dive-into-beautiful-soup-4bdd)
+- Week 19: [JS Array Methods](https://dev.to/erikhei/javascript-fun-ctions-explore-the-3-hottest-array-methods-map-filter-and-reduce-208)
+- Week 20: [Binary Trees II (Breadth First Search)](https://dev.to/erikhei/more-python-binary-trees-what-is-breadth-vs-depth-first-search-25la)
+
 
 <image src="https://i.redd.it/koc1i9gls7431.png" height=300>

@@ -16,7 +16,7 @@ class TreeNode:
     self.left = None
     self.right = None
   
-
+# PRE POST AND IN ORDER ARE CONSIDERED "DEPTH FIRST"
 # prints the parent before each child
 def pre_order(node):
   if node:
@@ -39,18 +39,18 @@ def in_order(node):
     in_order(node.right)
 
 
-tree = TreeNode(1)
-tree.left = TreeNode(2)
-tree.right = TreeNode(3)
-tree.left.left = TreeNode(4)
-tree.left.right = TreeNode(5)
+tree_1 = TreeNode(1)
+tree_1.left = TreeNode(2)
+tree_1.right = TreeNode(3)
+tree_1.left.left = TreeNode(4)
+tree_1.left.right = TreeNode(5)
 
-print("PRE-ORDER")
-pre_order(tree)
-print("POST-ORDER")
-post_order(tree)
-print("IN-ORDER")
-in_order(tree)
+# print("PRE-ORDER")
+# pre_order(tree)
+# print("POST-ORDER")
+# post_order(tree)
+# print("IN-ORDER")
+# in_order(tree)
 
 def unival_trees(node, count):
   if node:
