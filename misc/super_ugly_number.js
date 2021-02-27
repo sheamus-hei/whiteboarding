@@ -47,7 +47,7 @@ function superUglyNumber(n, primes) {
     s.add(prime);
   })
   let i = 0;
-  while (i < n - 1) {
+  while (i < n - 2) {
     for (let j = 0; j <= i; j++) {
       let newNum = primes[i] * primes[j];
       if (!s.has(newNum)) {
@@ -59,7 +59,7 @@ function superUglyNumber(n, primes) {
     }
     i++;
   }
-  // console.log(primes, i)
+  console.log(primes, i)
   return primes[i]
 }
 
@@ -86,5 +86,8 @@ function binary_search(nums, value){
 
 
 let n = 12;
-let primes = [2,7,13,19, 29];
+let primes = [2,7,13,19];
+console.log(superUglyNumber(n, primes));
+n = 12;
+primes = [50, 51, 52];
 console.log(superUglyNumber(n, primes));
