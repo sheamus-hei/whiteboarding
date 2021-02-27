@@ -1,4 +1,3 @@
-// WIP
 // Write a program to find the nth super ugly number.
 
 // Super ugly numbers are positive numbers whose all prime factors are in the given prime list primes of size k.
@@ -27,6 +26,8 @@
 // The given numbers in primes are in ascending order.
 // 0 < k ≤ 100, 0 < n ≤ 106, 0 < primes[i] < 1000.
 // The nth super ugly number is guaranteed to fit in a 32-bit signed integer.
+
+// isPrime funtion I didn't end up using
 function isPrime(n) {
   if (n <= 2) {
     return true;
@@ -40,33 +41,50 @@ function isPrime(n) {
 }
 
 function superUglyNumber(n, primes) {
+  primes.sort((a, b) => {b - a})
   let s = new Set();
   primes.forEach(prime => {
     s.add(prime);
   })
-  let uglies = [1];
-  let current = 2;
-  while (uglies.length < n) {
-    // 1. make a list of prime factors
-    let factors = []
-    for (let j = 2; j < current; j++) {
-      if (isPrime(j)){
-        temp = current;
-        while (temp % j === 0) {
-          factors.push(j);
-          temp = temp / j
-        }
+  let i = 0;
+  while (i < n - 1) {
+    for (let j = 0; j <= i; j++) {
+      let newNum = primes[i] * primes[j];
+      if (!s.has(newNum)) {
+        s.add(newNum)
+        // add it to the array in sorted order
+        let newIndex = binary_search(primes, newNum)
+        primes.splice(newIndex, 0, newNum)
       }
     }
-    console.log(factors)
-    // 2. loop over each prime and see if its in Set
-    
-    // 3. if primes are all in set, add to list
+    i++;
   }
-  return uglies.pop()
+  // console.log(primes, i)
+  return primes[i]
+}
+
+// binary search to optimally add new num into array
+function search2(nums, value, lo, hi) {
+  if (lo > hi){
+    return lo // not in list
+  }
+  let mid = Math.floor((lo + hi) / 2)
+  if (nums[mid] < value){
+    return search2(nums, value, mid + 1, hi)
+  } else if (nums[mid] > value){
+    return search2(nums, value, lo, mid - 1)
+  } else { //if value == nums[mid]
+    return mid
+  }
+}
+
+function binary_search(nums, value){
+  let lo = 0;
+  let hi = nums.length - 1;
+  return search2(nums, value, lo, hi);
 }
 
 
 let n = 12;
-let primes = [2,7,13,19];
+let primes = [2,7,13,19, 29];
 console.log(superUglyNumber(n, primes));
