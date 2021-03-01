@@ -87,6 +87,8 @@ function binary_search(nums, value){
 
 let n = 12;
 let primes = [2,7,13,19];
+// [2, 4, 7, 13, 19]
+// [2, 4, 7, 8, 13, 16, 19]
 console.log(superUglyNumber(n, primes));
 n = 12;
 primes = [50, 51, 52];
