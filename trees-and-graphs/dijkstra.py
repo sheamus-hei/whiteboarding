@@ -1,6 +1,8 @@
 # this is using adjacency list instead of matrix
 # borrowed code from here https://www.geeksforgeeks.org/python-program-for-dijkstras-shortest-path-algorithm-greedy-algo-7/
 # (but obviously adapted for adjaceny list)
+import sys
+
 class Graph:
   def __init__(self):
     self.vertices = []
