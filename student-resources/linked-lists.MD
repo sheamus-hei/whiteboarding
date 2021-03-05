@@ -45,7 +45,7 @@
 
 e.g. `[1, 2, 3]` -> `[0, 0, 0, 0]` -> `[1, 2, 3, 0]`
 
-* Dynamic Arrays (used for JS and Python lists) are just a traditional array that automatically to increase the size if you go over the limit.
+* Dynamic Arrays (used for JS and Python lists) are just a traditional array that automatically increases the size if you go over the limit.
 
 ### Comparison Between Linked Lists and Arrays
 * In general, Linked Lists are better for *updating* and Arrays/Dynamic Arrays are better for *accessing* data. 
@@ -149,7 +149,7 @@ Look at [this table](https://en.wikipedia.org/wiki/Dynamic_array#Performance) fr
 
 ## 3. How to Make Them
 
-* For a singly-linked list, you just need a `Node` class with  `data`and `next`. 
+* For a basic singly-linked list, you just need a `Node` class with  `data`and `next`. 
 
 		class Node:
 			def __init__(self, data):
@@ -183,6 +183,10 @@ Look at [this table](https://en.wikipedia.org/wiki/Dynamic_array#Performance) fr
    
 ## 4. Traverse It
 
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Singly-linked-list.svg/408px-Singly-linked-list.svg.png)
+
+*(Image: Wikipedia)*
+
 * To access any node, we need to start at the head and traverse the list for worst case O(N) runtime (if we need to reach the last node). 
 * Use recursion or a while loop!
 
@@ -207,6 +211,10 @@ Look at [this table](https://en.wikipedia.org/wiki/Dynamic_array#Performance) fr
 * Notice how we check `if node`. This is our recursive base case! 
 
 ## 5. Modify It 
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Singly-linked-list.svg/408px-Singly-linked-list.svg.png)
+
+*(Image: Wikipedia)*
 	
 * Usually instead of checking `if node` or `while node`, we check `if node.next` or `while node.next`
 * Why? In a singly-linked list, we can only go forwards. This means we can only modify links after the current node. 

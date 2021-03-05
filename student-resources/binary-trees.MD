@@ -22,7 +22,7 @@
 * Has a *root* and *leaves* 
 * Above, the root is 2 and leaves are the lower 2, 5, 11, and 4.
 
-* **Binary Search Trees** are binary trees where the values of all the left nodes are less than the values of all the right nodes. 
+* **Binary Search Trees** are binary trees where the values of all the left nodes are less than the values of all the right nodes (they're sorted). 
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/360px-Binary_search_tree.svg.png)
 
@@ -31,7 +31,7 @@
 ## 2. Why Use?
 
 * The depth of a balanced tree is 2<sup>N</sup> nodes deep, so worst case access of is O(log N), significantly better than O(N)
-* If the tree is not balanced, worse case is still O(N) because we basically have a Linked List
+* If the tree is not balanced, worse case is still O(N) because we basically have a Linked List.
 
 ## 3. Traversal
 
@@ -47,9 +47,9 @@
 
 	1. **Pre-Order** visits a parent node before its children. Pre-order of the above tree would result 1, 2, 4, 5, 3.
 	
-	2. **Post-Order** visits a node's children first, and then the parent. Post-order would result in 4, 5, 2, 3, 1.
-	
-	3. **In-Order** visits each node from left to right. In-order traversal of the the above tree would give us 4, 2, 5, 1, 3
+	2. **In-Order** visits each node from left to right. In-order traversal of the the above tree would give us 4, 2, 5, 1, 3	
+	3. **Post-Order** visits a node's children first, and then the parent. Post-order would result in 4, 5, 2, 3, 1.
+
 
 ### DFS Example 
 
