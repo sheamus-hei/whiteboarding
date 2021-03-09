@@ -71,7 +71,7 @@ def sum_of_three(nums):
 # -1 #
 
 nums = [-1,0,1, 2,-1,-4, 1, 3, 4, 2, -5, -2, -4]
-print(sum_of_three([0,0,0]))
+print(sum_of_three(nums))
 
 
   
