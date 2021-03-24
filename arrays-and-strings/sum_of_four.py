@@ -34,8 +34,8 @@ def sum_of_four(nums, target):
           if working_target - nums[m] == 0:
             # make code to put in duplicate set
             code = str(current[0])
-            for number in range(1, len(current)):
-              code += "&" + str(number)
+            for n in range(1, len(current)):
+              code += "&" + str(current[n])
             if code not in checked:
               output.append(current.copy())
               checked.add(code)
@@ -46,6 +46,8 @@ def sum_of_four(nums, target):
       working_target += nums[j]
 
   return output
+
+#def sum_of_four_recursive(nums, target)
 
   
 nums = [1,0,-1,0,-2,2, 0]
