@@ -18,11 +18,12 @@ def sum_of_four(nums, target):
   if len(nums) < 4:
     return []
   output = []
+  current = []
   nums.sort()
   checked = set()
   for i in range(len(nums) - 3):
     working_target = target - nums[i]
-    current = [nums[i]]
+    current.append(nums[i])
     for j in range(i + 1, len(nums) - 2):
       working_target -= nums[j]
       current.append(nums[j])
@@ -44,7 +45,7 @@ def sum_of_four(nums, target):
         working_target += nums[k]
       current.pop()
       working_target += nums[j]
-
+    current.pop()
   return output
 
 #def sum_of_four_recursive(nums, target)

@@ -50,7 +50,35 @@ def sum_of_three(nums):
             solutions.append([num, second, third])
   return solutions
         
-
+def sum_of_3b(nums, target):
+  if len(nums) < 3:
+    return []
+  output = []
+  current = []
+  checked = set()
+  nums.sort()
+  for i in range(len(nums) - 2):
+    current.append(nums[i])
+    working_target = target - nums[i]
+    for j in range(i + 1, len(nums) - 1):
+      working_target -= nums[j]
+      current.append(nums[j])
+      for k in range(j + 1, len(nums)):
+        current.append(nums[k])
+        if working_target - nums[k] == 0:
+          # make code to put in duplicate set
+          code = str(current[0])
+          for n in range(1, len(current)):
+            code += "&" + str(current[n])
+          if code not in checked:
+            print("adding", code, current)
+            output.append(current.copy())
+            checked.add(code)
+        current.pop()
+      current.pop()
+      working_target += nums[j]
+    current.pop()
+  return output
     
 # {
 #   "-4": 1,
@@ -70,8 +98,11 @@ def sum_of_three(nums):
 # add 0 -> 0 save
 # -1 #
 
-nums = [-1,0,1, 2,-1,-4, 1, 3, 4, 2, -5, -2, -4]
-print(sum_of_three(nums))
+nums = [-1,0,1,2,-1,-4]
+# Output: [[-1,-1,2],[-1,0,1]]
+# nums = [-1,0,1, 2,-1,-4, 1, 3, 4, 2, -5, -2, -4]
+# print(sum_of_three(nums))
+print(sum_of_3b(nums, 0))
 
 
   

@@ -29,9 +29,9 @@ def sum_of_k(nums, target, k):
   if len(nums) < k:
     return []
   output = []
+  current = []
   nums.sort()
   checked = set()
-  current = []
   sum_helper(nums, target, k, output, checked, current, 0)
   return output
 
@@ -43,8 +43,8 @@ def sum_helper(nums, target, k, output, checked, current, prev):
     if k == 1 and target - nums[i] == 0:
       # make code to put in duplicate set
       code = str(current[0])
-      for j in range(1, len(current)):
-        code += "&" + str(current[j])
+      for n in range(1, len(current)):
+        code += "&" + str(current[n])
       # print(code, current)
       if code not in checked:
         output.append(current.copy())
