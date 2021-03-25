@@ -36,8 +36,6 @@ def sum_of_k(nums, target, k):
   return output
 
 def sum_helper(nums, target, k, output, checked, current, prev):
-  if k == 0:
-    return
   for i in range(prev, len(nums) - k + 1):
     current.append(nums[i])
     if k == 1 and target - nums[i] == 0:
@@ -49,7 +47,8 @@ def sum_helper(nums, target, k, output, checked, current, prev):
       if code not in checked:
         output.append(current.copy())
         checked.add(code)
-    sum_helper(nums, target - nums[i], k - 1, output, checked, current, i + 1)
+    else: 
+      sum_helper(nums, target - nums[i], k - 1, output, checked, current, i + 1)
     current.pop()
 
 nums = [-1,0,1,2,-1,-4, -2]
