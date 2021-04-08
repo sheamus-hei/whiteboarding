@@ -48,4 +48,4 @@ def longest_paren(s):
     return 0
   return max(find(s, True), find(s, False))
 
-print(longest_paren("((())()"))
+print(longest_paren("((())(()"))
