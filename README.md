@@ -1,6 +1,6 @@
 # Weekly Whiteboarding Practice Problems
 
-*with Erik from SEI 29*
+*with Sheamus from SEI 29*
 
 ### Links to articles ⬇️
 
